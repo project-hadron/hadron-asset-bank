@@ -1,1 +1,85 @@
-{"controller": {"master": {"use_case": {}, "description": "", "version": "v02", "status": "discovery", "connectors": {"pm_controller_master": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/contracts/hadron_pm_controller_master.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}, "template_source": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasSourceHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}, "template_persist": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}}, "intent": {"hubspot_gen": {"0": {"synthetic_builder": {"intent_creator": "doatridge", "task_name": "hubspot"}}}, "hubspot_out": {"0": {"transition": {"intent_creator": "doatridge", "task_name": "hubspot"}}}}, "snapshot": {}, "run_book": {"primary_run_book": [{"task": "hubspot_gen", "source": 1000, "persist": false}, {"task": "hubspot_out"}]}, "meta": {"module": ["ds_discovery", "managers", "controller_property_manager"], "class": "ControllerPropertyManager"}, "knowledge": {"intent": {}, "schema": {}}}}, "config_meta": {"uid": "03910d7e-346d-43a6-b905-0fe40988b86d", "create": "2021-06-07 20:30:06.221438", "modify": "2021-06-07 20:30:06.606900", "release": "2.12.014"}}
+{
+    "controller": {
+        "master": {
+            "use_case": {},
+            "description": "",
+            "version": "v02",
+            "status": "discovery",
+            "connectors": {
+                "pm_controller_master": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/contracts/hadron_pm_controller_master.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_source": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasSourceHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_persist": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                }
+            },
+            "intent": {
+                "hubspot_gen": {
+                    "0": {
+                        "synthetic_builder": {
+                            "intent_creator": "doatridge",
+                            "task_name": "hubspot"
+                        }
+                    }
+                },
+                "hubspot_out": {
+                    "0": {
+                        "transition": {
+                            "intent_creator": "doatridge",
+                            "task_name": "hubspot"
+                        }
+                    }
+                }
+            },
+            "snapshot": {},
+            "run_book": {
+                "primary_run_book": [
+                    {
+                        "task": "hubspot_gen",
+                        "source": 1000,
+                        "persist": false
+                    },
+                    {
+                        "task": "hubspot_out"
+                    }
+                ]
+            },
+            "meta": {
+                "module": [
+                    "ds_discovery",
+                    "managers",
+                    "controller_property_manager"
+                ],
+                "class": "ControllerPropertyManager"
+            },
+            "knowledge": {
+                "intent": {},
+                "schema": {}
+            }
+        }
+    },
+    "config_meta": {
+        "uid": "03910d7e-346d-43a6-b905-0fe40988b86d",
+        "create": "2021-06-07 20:30:06.221438",
+        "modify": "2021-06-07 20:30:06.606900",
+        "release": "2.12.014"
+    }
+}

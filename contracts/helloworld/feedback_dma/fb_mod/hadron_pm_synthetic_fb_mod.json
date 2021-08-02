@@ -1,1 +1,368 @@
-{"synthetic": {"fb_mod": {"description": "Helloworld domain synthetic component for feedback_dma fb_mod contract", "version": "v01", "status": "discovery", "connectors": {"primary_persist": {"raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v01", "raw_kwargs": {}, "aligned": true}, "watchlist": {"raw_uri": "s3://project-hadron-cs-repo/domain/helloworld/data/feedback/watchlist/${HADRON_CAMPAIGN_WATCHLIST}", "raw_module_name": "ds_discovery.handlers.s3_handlers", "raw_handler": "S3PersistHandler", "raw_version": "v01", "raw_kwargs": {}, "aligned": false}, "pm_synthetic_fb_mod": {"raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_synthetic_fb_mod.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v01", "raw_kwargs": {}, "aligned": false}, "template_source": {"raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasSourceHandler", "raw_version": "v01", "raw_kwargs": {}, "aligned": false}, "template_persist": {"raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v01", "raw_kwargs": {}, "aligned": false}}, "intent": {"watchlist": {"0": {"frame_starter": {"intent_creator": "doatridge", "canonical": "watchlist", "regex": ["_id", "watch_start"], "column_name": "watchlist"}}}, "hubspot": {"0": {"model_merge": {"intent_creator": "doatridge", "other": {"method": "@generate", "task_name": "hubspot", "repo_uri": "https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/helloworld/feedback_gen/hubspot/"}, "left_on": "profile_id", "right_on": "member_id", "column_name": "hubspot"}}}, "hubspot_rwd_wght": {"0": {"model_sample": {"intent_creator": "doatridge", "sample": {"method": "@generate", "size": 1, "task_name": "hubspot_rwd_cfg", "repo_uri": "https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/helloworld/feedback_dma/hubspot_rwd_cfg/"}, "column_name": "hubspot_rwd_wght"}}}, "p_spam_report": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["spam_report", "w_spam_report"], "agg": "prod", "column_name": "p_spam_report"}}}, "p_not_sent": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["not_sent", "w_not_sent"], "agg": "prod", "column_name": "p_not_sent"}}}, "p_sent": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["sent", "w_sent"], "agg": "prod", "column_name": "p_sent"}}}, "p_opened": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["opened", "w_opened"], "agg": "prod", "column_name": "p_opened"}}}, "p_hard_bounced": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["hard_bounced", "w_hard_bounced"], "agg": "prod", "column_name": "p_hard_bounced"}}}, "p_unsubscribed": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["unsubscribed", "w_unsubscribed"], "agg": "prod", "column_name": "p_unsubscribed"}}}, "p_suppressed": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["suppressed", "w_suppressed"], "agg": "prod", "column_name": "p_suppressed"}}}, "p_soft_bounced": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["soft_bounced", "w_soft_bounced"], "agg": "prod", "column_name": "p_soft_bounced"}}}, "p_delivered": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["delivered", "w_delivered"], "agg": "prod", "column_name": "p_delivered"}}}, "p_clicked": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["clicked", "w_clicked"], "agg": "prod", "column_name": "p_clicked"}}}, "p_contact_lost": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["contact_lost", "w_contact_lost"], "agg": "prod", "column_name": "p_contact_lost"}}}, "reward": {"0": {"correlate_aggregate": {"intent_creator": "doatridge", "headers": ["p_sent", "p_clicked", "p_soft_bounced", "p_hard_bounced", "p_suppressed", "p_spam_report", "p_delivered", "p_opened", "p_contact_lost", "p_not_sent", "p_unsubscribed"], "agg": "sum", "column_name": "reward"}, "correlate_selection": {"intent_creator": "doatridge", "selection": [{"column": "reward", "condition": "@ < 0"}], "action": {"method": "@constant", "value": 0}, "default_action": {"method": "@header", "header": "reward"}, "column_name": "reward"}}}, "feedback_dt": {"0": {"get_datetime": {"intent_creator": "doatridge", "start": -1, "until": 0, "relative_freq": [0.2, 1, 2, 5, 4], "column_name": "feedback_dt"}}}, "feedback_id": {"0": {"get_datetime": {"intent_creator": "doatridge", "start": 0, "until": 1, "at_most": 1, "ordered": "asc", "date_format": "%Y%m%d%H%M%S", "column_name": "feedback_id"}}}, "reward_select": {"0": {"frame_selection": {"intent_creator": "doatridge", "regex": ["inter_inst_id", "intervention_id", "profile_id", "reward", "feedback_"], "column_name": "reward_select"}}}}, "snapshot": {}, "run_book": {"primary_run_book": ["watchlist", "hubspot", "hubspot_rwd_wght", "feedback_dt", "feedback_id"]}, "meta": {"module": ["ds_discovery", "managers", "synthetic_property_manager"], "class": "SyntheticPropertyManager"}, "knowledge": {"describe": {}, "intent": {"watchlist": {"2021-05-16T22:57:10.680691": "extracted watchlist from the plan executor"}, "hubspot": {"2021-05-16T22:57:11.653114": "merge hubspot member_id with watchlist profile_id"}, "hubspot_rwd_wght": {"2021-05-16T22:57:12.140789": "The hubspot reward weighting"}, "feedback_dt": {"2021-05-16T22:57:12.430924": "The date when feedback was recieved"}, "feedback_id": {"2021-05-16T22:57:12.494413": "a unique reference id from the feedback system unique across all feeback batches"}}, "schema": {}}}}, "config_meta": {"uid": "9750d4ac-6333-49ab-a714-9fda42252d91", "create": "2021-05-16 22:57:23.672430", "modify": "2021-05-16 23:00:05.965352", "release": "2.12.013"}}
+{
+    "synthetic": {
+        "fb_mod": {
+            "description": "Helloworld domain synthetic component for feedback_dma fb_mod contract",
+            "version": "v01",
+            "status": "discovery",
+            "connectors": {
+                "primary_persist": {
+                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v01",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "watchlist": {
+                    "raw_uri": "s3://project-hadron-cs-repo/domain/helloworld/data/feedback/watchlist/${HADRON_CAMPAIGN_WATCHLIST}",
+                    "raw_module_name": "ds_discovery.handlers.managed_content",
+                    "raw_handler": "ManagedContentPersistHandler",
+                    "raw_version": "v01",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "pm_synthetic_fb_mod": {
+                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_synthetic_fb_mod.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v01",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_source": {
+                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasSourceHandler",
+                    "raw_version": "v01",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_persist": {
+                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v01",
+                    "raw_kwargs": {},
+                    "aligned": false
+                }
+            },
+            "intent": {
+                "watchlist": {
+                    "0": {
+                        "frame_starter": {
+                            "intent_creator": "doatridge",
+                            "canonical": "watchlist",
+                            "regex": [
+                                "_id",
+                                "watch_start"
+                            ],
+                            "column_name": "watchlist"
+                        }
+                    }
+                },
+                "hubspot": {
+                    "0": {
+                        "model_merge": {
+                            "intent_creator": "doatridge",
+                            "other": {
+                                "method": "@generate",
+                                "task_name": "hubspot",
+                                "repo_uri": "https://raw.githubusercontent.com/bpandey-CS/hadron-asset-bank/managed_content/contracts/helloworld/feedback_gen/hubspot/"
+                            },
+                            "left_on": "profile_id",
+                            "right_on": "member_id",
+                            "column_name": "hubspot"
+                        }
+                    }
+                },
+                "hubspot_rwd_wght": {
+                    "0": {
+                        "model_sample": {
+                            "intent_creator": "doatridge",
+                            "sample": {
+                                "method": "@generate",
+                                "size": 1,
+                                "task_name": "hubspot_rwd_cfg",
+                                "repo_uri": "https://raw.githubusercontent.com/bpandey-CS/hadron-asset-bank/managed_content/contracts/helloworld/feedback_dma/hubspot_rwd_cfg/"
+                            },
+                            "column_name": "hubspot_rwd_wght"
+                        }
+                    }
+                },
+                "p_spam_report": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "spam_report",
+                                "w_spam_report"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_spam_report"
+                        }
+                    }
+                },
+                "p_not_sent": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "not_sent",
+                                "w_not_sent"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_not_sent"
+                        }
+                    }
+                },
+                "p_sent": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "sent",
+                                "w_sent"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_sent"
+                        }
+                    }
+                },
+                "p_opened": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "opened",
+                                "w_opened"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_opened"
+                        }
+                    }
+                },
+                "p_hard_bounced": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "hard_bounced",
+                                "w_hard_bounced"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_hard_bounced"
+                        }
+                    }
+                },
+                "p_unsubscribed": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "unsubscribed",
+                                "w_unsubscribed"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_unsubscribed"
+                        }
+                    }
+                },
+                "p_suppressed": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "suppressed",
+                                "w_suppressed"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_suppressed"
+                        }
+                    }
+                },
+                "p_soft_bounced": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "soft_bounced",
+                                "w_soft_bounced"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_soft_bounced"
+                        }
+                    }
+                },
+                "p_delivered": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "delivered",
+                                "w_delivered"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_delivered"
+                        }
+                    }
+                },
+                "p_clicked": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "clicked",
+                                "w_clicked"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_clicked"
+                        }
+                    }
+                },
+                "p_contact_lost": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "contact_lost",
+                                "w_contact_lost"
+                            ],
+                            "agg": "prod",
+                            "column_name": "p_contact_lost"
+                        }
+                    }
+                },
+                "reward": {
+                    "0": {
+                        "correlate_aggregate": {
+                            "intent_creator": "doatridge",
+                            "headers": [
+                                "p_sent",
+                                "p_clicked",
+                                "p_soft_bounced",
+                                "p_hard_bounced",
+                                "p_suppressed",
+                                "p_spam_report",
+                                "p_delivered",
+                                "p_opened",
+                                "p_contact_lost",
+                                "p_not_sent",
+                                "p_unsubscribed"
+                            ],
+                            "agg": "sum",
+                            "column_name": "reward"
+                        },
+                        "correlate_selection": {
+                            "intent_creator": "doatridge",
+                            "selection": [
+                                {
+                                    "column": "reward",
+                                    "condition": "@ < 0"
+                                }
+                            ],
+                            "action": {
+                                "method": "@constant",
+                                "value": 0
+                            },
+                            "default_action": {
+                                "method": "@header",
+                                "header": "reward"
+                            },
+                            "column_name": "reward"
+                        }
+                    }
+                },
+                "feedback_dt": {
+                    "0": {
+                        "get_datetime": {
+                            "intent_creator": "doatridge",
+                            "start": -1,
+                            "until": 0,
+                            "relative_freq": [
+                                0.2,
+                                1,
+                                2,
+                                5,
+                                4
+                            ],
+                            "column_name": "feedback_dt"
+                        }
+                    }
+                },
+                "feedback_id": {
+                    "0": {
+                        "get_datetime": {
+                            "intent_creator": "doatridge",
+                            "start": 0,
+                            "until": 1,
+                            "at_most": 1,
+                            "ordered": "asc",
+                            "date_format": "%Y%m%d%H%M%S",
+                            "column_name": "feedback_id"
+                        }
+                    }
+                },
+                "reward_select": {
+                    "0": {
+                        "frame_selection": {
+                            "intent_creator": "doatridge",
+                            "regex": [
+                                "inter_inst_id",
+                                "intervention_id",
+                                "profile_id",
+                                "reward",
+                                "feedback_"
+                            ],
+                            "column_name": "reward_select"
+                        }
+                    }
+                }
+            },
+            "snapshot": {},
+            "run_book": {
+                "primary_run_book": [
+                    "watchlist",
+                    "hubspot",
+                    "hubspot_rwd_wght",
+                    "feedback_dt",
+                    "feedback_id"
+                ]
+            },
+            "meta": {
+                "module": [
+                    "ds_discovery",
+                    "managers",
+                    "synthetic_property_manager"
+                ],
+                "class": "SyntheticPropertyManager"
+            },
+            "knowledge": {
+                "describe": {},
+                "intent": {
+                    "watchlist": {
+                        "2021-05-16T22:57:10.680691": "extracted watchlist from the plan executor"
+                    },
+                    "hubspot": {
+                        "2021-05-16T22:57:11.653114": "merge hubspot member_id with watchlist profile_id"
+                    },
+                    "hubspot_rwd_wght": {
+                        "2021-05-16T22:57:12.140789": "The hubspot reward weighting"
+                    },
+                    "feedback_dt": {
+                        "2021-05-16T22:57:12.430924": "The date when feedback was recieved"
+                    },
+                    "feedback_id": {
+                        "2021-05-16T22:57:12.494413": "a unique reference id from the feedback system unique across all feeback batches"
+                    }
+                },
+                "schema": {}
+            }
+        }
+    },
+    "config_meta": {
+        "uid": "9750d4ac-6333-49ab-a714-9fda42252d91",
+        "create": "2021-05-16 22:57:23.672430",
+        "modify": "2021-05-16 23:00:05.965352",
+        "release": "2.12.013"
+    }
+}
