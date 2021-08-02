@@ -67,7 +67,7 @@
                             "other": {
                                 "method": "@generate",
                                 "task_name": "hubspot",
-                                "repo_uri": "https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/helloworld/feedback_gen/hubspot/"
+                                "repo_uri": "https://raw.githubusercontent.com/bpandey-CS/hadron-asset-bank/managed_content/contracts/helloworld/feedback_gen/hubspot/"
                             },
                             "left_on": "profile_id",
                             "right_on": "member_id",
@@ -83,7 +83,7 @@
                                 "method": "@generate",
                                 "size": 1,
                                 "task_name": "hubspot_rwd_cfg",
-                                "repo_uri": "https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/helloworld/feedback_dma/hubspot_rwd_cfg/"
+                                "repo_uri": "https://raw.githubusercontent.com/bpandey-CS/hadron-asset-bank/managed_content/contracts/helloworld/feedback_dma/hubspot_rwd_cfg/"
                             },
                             "column_name": "hubspot_rwd_wght"
                         }

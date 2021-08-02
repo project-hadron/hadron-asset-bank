@@ -15,8 +15,8 @@
                 },
                 "watchlist": {
                     "raw_uri": "s3://project-hadron-cs-repo/domain/helloworld/data/feedback/watchlist/${HADRON_CAMPAIGN_WATCHLIST}",
-                    "raw_module_name": "ds_discovery.handlers.s3_handlers",
-                    "raw_handler": "S3PersistHandler",
+                    "raw_module_name": "ds_discovery.handlers.managed_content",
+                    "raw_handler": "ManagedContentPersistHandler",
                     "raw_version": "v02",
                     "raw_kwargs": {},
                     "aligned": false
