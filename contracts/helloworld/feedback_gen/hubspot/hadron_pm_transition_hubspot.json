@@ -1,1 +1,928 @@
-{"transition": {"hubspot": {"provenance": {"title": "Simulated HubSpot", "domain": "HelloWorld", "description": "A simulation of a hubspot softeare solution based naive email response", "license": {"type": "PDDL", "name": "Open Data Commons Attribution License", "uri": "https://opendatacommons.org/licenses/pddl/summary"}, "provider": {"name": "Project Hadron"}, "author": {"name": "doatridge"}}, "description": "Helloworld domain transition component for feedback_gen hubspot contract", "version": "v02", "status": "discovery", "connectors": {"primary_source": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/feedback_gen_synthetic_hubspot_dataset${VERSION}.parquet", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": true}, "primary_persist": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/feedback_gen_transition_hubspot_dataset${VERSION}.parquet", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": true}, "field_description": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_field_description${VERSION}.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": true}, "dictionary": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_dictionary${VERSION}.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": true}, "data_quality_summary": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_data_quality_summary${VERSION}${TO_DAYS}.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": true}, "pm_transition_hubspot": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/contracts/hadron_pm_transition_hubspot.json", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}, "template_source": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasSourceHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}, "template_persist": {"raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data", "raw_module_name": "ds_discovery.handlers.pandas_handlers", "raw_handler": "PandasPersistHandler", "raw_version": "v02", "raw_kwargs": {}, "aligned": false}}, "intent": {"base": {"0": {"auto_clean_header": {"intent_creator": "doatridge"}, "auto_transition": {"intent_creator": "doatridge"}}}}, "snapshot": {}, "run_book": {}, "meta": {"module": ["ds_discovery", "managers", "transition_property_manager"], "class": "TransitionPropertyManager"}, "knowledge": {"observations": {}, "actions": {}, "attributes": {"clicked": {"2021-06-07T20:29:34.341980": "of those opened the number that clicked on the clickable or link"}, "contact_lost": {"2021-06-07T20:29:34.342082": "contact removed themselves from the system as a result of the email"}, "delivered": {"2021-06-07T20:29:34.342161": "of those sent th ones that didn't get bounced and thus were delivered"}, "hard_bounced": {"2021-06-07T20:29:34.342238": "failed to deliver for permanent reasons, such as the recipient's address is invalid"}, "not_sent": {"2021-06-07T20:29:34.342319": "contacts who were dropped automatically to protect your email sender reputation"}, "opened": {"2021-06-07T20:29:34.342399": "of those delivered the number that were opened"}, "send_date": {"2021-06-07T20:29:34.342481": "The time and date when the email was actually sent"}, "sent": {"2021-06-07T20:29:34.342565": "If permissions and blocked are favourably for this action and is sent"}, "soft_bounced": {"2021-06-07T20:29:34.342664": "got to server but bounces back undelivered before it gets into the inbox. reasons might be, recipient's inbox is full, the server may be down"}, "spam_report": {"2021-06-07T20:29:34.342751": "contacts who reported this email as spam"}, "suppressed": {"2021-06-07T20:29:34.342839": "which contracts dropped automatically were supressed"}, "unsubscribed": {"2021-06-07T20:29:34.342933": "contacts who received the email and opted out of this or all email subscription types"}, "campaign": {"2021-06-07T20:29:34.437311": "The campaign identifier"}, "created_date": {"2021-06-07T20:29:34.439119": "The date the campaign was created"}, "member_id": {"2021-06-07T20:29:34.441791": "within a campaign, the unique I of the member emailed"}}, "intent": {}, "schema": {"primary_schema": {"member_id": {"branch": {"label": "member_id", "root": "member_id", "leaves": ["(10000177.0, 10002757.0, 'both')"]}, "insight": {"intent": {"intervals": [[10000177.0, 10002757.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 10000177.0, "highest": 10002757.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "created_date": {"branch": {"label": "created_date", "root": "created_date", "leaves": ["2021-05-26 11:09:42.437060"]}, "insight": {"intent": {"categories": ["2021-05-26 11:09:42.437060"], "dtype": "category"}, "params": {"freq_precision": 2, "top": 10}, "patterns": {"relative_freq": [100.0], "sample_distribution": [5]}, "stats": {"category_count": 1, "highest_unique": 100.0, "lowest_unique": 100.0, "nulls_percent": 0.0, "sample_size": 5, "excluded_percent": 0.0}}}, "sent": {"branch": {"label": "sent", "root": "sent", "leaves": ["(1.0, 1.0, 'both')"]}, "insight": {"intent": {"intervals": [[1.0, 1.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 1.0, "highest": 1.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "send_date": {"branch": {"label": "send_date", "root": "send_date", "leaves": ["(Timestamp('2021-05-26 11:10:41.437062+0000', tz='UTC'), Timestamp('2021-05-26 11:10:41.837059+0000', tz='UTC'), 'both')", "(Timestamp('2021-05-26 11:10:41.837059+0000', tz='UTC'), Timestamp('2021-05-26 11:10:42.237056+0000', tz='UTC'), 'right')", "(Timestamp('2021-05-26 11:10:42.237056+0000', tz='UTC'), Timestamp('2021-05-26 11:10:42.637063+0000', tz='UTC'), 'right')", "(Timestamp('2021-05-26 11:10:42.637063+0000', tz='UTC'), Timestamp('2021-05-26 11:10:43.037060+0000', tz='UTC'), 'right')", "(Timestamp('2021-05-26 11:10:43.037060+0000', tz='UTC'), Timestamp('2021-05-26 11:10:43.437058+0000', tz='UTC'), 'right')"]}, "insight": {"intent": {"intervals": [["2021-05-26T11:10:41", "2021-05-26T11:10:41", "both"], ["2021-05-26T11:10:41", "2021-05-26T11:10:42", "right"], ["2021-05-26T11:10:42", "2021-05-26T11:10:42", "right"], ["2021-05-26T11:10:42", "2021-05-26T11:10:43", "right"], ["2021-05-26T11:10:43", "2021-05-26T11:10:43", "right"]], "dtype": "date"}, "params": {"freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": 18773.47, "upper": 18773.47, "day_first": false, "year_first": false}, "patterns": {"relative_freq": [40.0, 0.0, 40.0, 0.0, 20.0], "sample_distribution": [2, 0, 2, 0, 1]}, "stats": {"lowest": "2021-05-26T11:10:41", "highest": "2021-05-26T11:10:43", "nulls_percent": 0.0, "sample_size": 5, "excluded_sample": 0, "excluded_percent": 0.0, "mean": "2021-05-26T11:16:48", "std": 0.0}}}, "not_sent": {"branch": {"label": "not_sent", "root": "not_sent", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "suppressed": {"branch": {"label": "suppressed", "root": "suppressed", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "hard_bounced": {"branch": {"label": "hard_bounced", "root": "hard_bounced", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "soft_bounced": {"branch": {"label": "soft_bounced", "root": "soft_bounced", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "delivered": {"branch": {"label": "delivered", "root": "delivered", "leaves": ["(1.0, 1.0, 'both')"]}, "insight": {"intent": {"intervals": [[1.0, 1.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 1.0, "highest": 1.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "opened": {"branch": {"label": "opened", "root": "opened", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "clicked": {"branch": {"label": "clicked", "root": "clicked", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "spam_report": {"branch": {"label": "spam_report", "root": "spam_report", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "unsubscribed": {"branch": {"label": "unsubscribed", "root": "unsubscribed", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}, "contact_lost": {"branch": {"label": "contact_lost", "root": "contact_lost", "leaves": ["(0.0, 0.0, 'both')"]}, "insight": {"intent": {"intervals": [[0.0, 0.0, "both"]], "dtype": "number"}, "params": {"precision": 0, "freq_precision": 2, "granularity": 5, "detail_stats": false, "lower": null, "upper": null}, "patterns": {"relative_freq": [1], "freq_mean": [0], "freq_std": [0], "sample_distribution": [0]}, "stats": {"lowest": 0.0, "highest": 0.0, "nulls_percent": 0.0, "sample_size": 0, "excluded_sample": 0, "excluded_percent": 0.0, "mean": 0, "std": 0}}}}}}}}, "config_meta": {"uid": "ec08490e-0490-4a22-b766-ed41f711c27e", "create": "2021-06-07 20:29:37.310336", "modify": "2021-06-07 20:29:57.410696", "release": "2.12.014"}}
+{
+    "transition": {
+        "hubspot": {
+            "provenance": {
+                "title": "Simulated HubSpot",
+                "domain": "HelloWorld",
+                "description": "A simulation of a hubspot softeare solution based naive email response",
+                "license": {
+                    "type": "PDDL",
+                    "name": "Open Data Commons Attribution License",
+                    "uri": "https://opendatacommons.org/licenses/pddl/summary"
+                },
+                "provider": {
+                    "name": "Project Hadron"
+                },
+                "author": {
+                    "name": "doatridge"
+                }
+            },
+            "description": "Helloworld domain transition component for feedback_gen hubspot contract",
+            "version": "v02",
+            "status": "discovery",
+            "connectors": {
+                "primary_source": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/feedback_gen_synthetic_hubspot_dataset${VERSION}.parquet",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "primary_persist": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/feedback_gen_transition_hubspot_dataset${VERSION}.parquet",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "field_description": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_field_description${VERSION}.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "dictionary": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_dictionary${VERSION}.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "data_quality_summary": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data/hadron_transition_hubspot_data_quality_summary${VERSION}${TO_DAYS}.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": true
+                },
+                "pm_transition_hubspot": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/contracts/hadron_pm_transition_hubspot.json",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_source": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasSourceHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                },
+                "template_persist": {
+                    "raw_uri": "${PWD}/helloworld/feedback_gen/hubspot/data",
+                    "raw_module_name": "ds_discovery.handlers.pandas_handlers",
+                    "raw_handler": "PandasPersistHandler",
+                    "raw_version": "v02",
+                    "raw_kwargs": {},
+                    "aligned": false
+                }
+            },
+            "intent": {
+                "base": {
+                    "0": {
+                        "auto_clean_header": {
+                            "intent_creator": "doatridge"
+                        },
+                        "auto_transition": {
+                            "intent_creator": "doatridge"
+                        }
+                    }
+                }
+            },
+            "snapshot": {},
+            "run_book": {},
+            "meta": {
+                "module": [
+                    "ds_discovery",
+                    "managers",
+                    "transition_property_manager"
+                ],
+                "class": "TransitionPropertyManager"
+            },
+            "knowledge": {
+                "observations": {},
+                "actions": {},
+                "attributes": {
+                    "clicked": {
+                        "2021-06-07T20:29:34.341980": "of those opened the number that clicked on the clickable or link"
+                    },
+                    "contact_lost": {
+                        "2021-06-07T20:29:34.342082": "contact removed themselves from the system as a result of the email"
+                    },
+                    "delivered": {
+                        "2021-06-07T20:29:34.342161": "of those sent th ones that didn't get bounced and thus were delivered"
+                    },
+                    "hard_bounced": {
+                        "2021-06-07T20:29:34.342238": "failed to deliver for permanent reasons, such as the recipient's address is invalid"
+                    },
+                    "not_sent": {
+                        "2021-06-07T20:29:34.342319": "contacts who were dropped automatically to protect your email sender reputation"
+                    },
+                    "opened": {
+                        "2021-06-07T20:29:34.342399": "of those delivered the number that were opened"
+                    },
+                    "send_date": {
+                        "2021-06-07T20:29:34.342481": "The time and date when the email was actually sent"
+                    },
+                    "sent": {
+                        "2021-06-07T20:29:34.342565": "If permissions and blocked are favourably for this action and is sent"
+                    },
+                    "soft_bounced": {
+                        "2021-06-07T20:29:34.342664": "got to server but bounces back undelivered before it gets into the inbox. reasons might be, recipient's inbox is full, the server may be down"
+                    },
+                    "spam_report": {
+                        "2021-06-07T20:29:34.342751": "contacts who reported this email as spam"
+                    },
+                    "suppressed": {
+                        "2021-06-07T20:29:34.342839": "which contracts dropped automatically were supressed"
+                    },
+                    "unsubscribed": {
+                        "2021-06-07T20:29:34.342933": "contacts who received the email and opted out of this or all email subscription types"
+                    },
+                    "campaign": {
+                        "2021-06-07T20:29:34.437311": "The campaign identifier"
+                    },
+                    "created_date": {
+                        "2021-06-07T20:29:34.439119": "The date the campaign was created"
+                    },
+                    "member_id": {
+                        "2021-06-07T20:29:34.441791": "within a campaign, the unique I of the member emailed"
+                    }
+                },
+                "intent": {},
+                "schema": {
+                    "primary_schema": {
+                        "member_id": {
+                            "branch": {
+                                "label": "member_id",
+                                "root": "member_id",
+                                "leaves": [
+                                    "(10000177.0, 10002757.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            10000177.0,
+                                            10002757.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 10000177.0,
+                                    "highest": 10002757.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "created_date": {
+                            "branch": {
+                                "label": "created_date",
+                                "root": "created_date",
+                                "leaves": [
+                                    "2021-05-26 11:09:42.437060"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "categories": [
+                                        "2021-05-26 11:09:42.437060"
+                                    ],
+                                    "dtype": "category"
+                                },
+                                "params": {
+                                    "freq_precision": 2,
+                                    "top": 10
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        100.0
+                                    ],
+                                    "sample_distribution": [
+                                        5
+                                    ]
+                                },
+                                "stats": {
+                                    "category_count": 1,
+                                    "highest_unique": 100.0,
+                                    "lowest_unique": 100.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 5,
+                                    "excluded_percent": 0.0
+                                }
+                            }
+                        },
+                        "sent": {
+                            "branch": {
+                                "label": "sent",
+                                "root": "sent",
+                                "leaves": [
+                                    "(1.0, 1.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            1.0,
+                                            1.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 1.0,
+                                    "highest": 1.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "send_date": {
+                            "branch": {
+                                "label": "send_date",
+                                "root": "send_date",
+                                "leaves": [
+                                    "(Timestamp('2021-05-26 11:10:41.437062+0000', tz='UTC'), Timestamp('2021-05-26 11:10:41.837059+0000', tz='UTC'), 'both')",
+                                    "(Timestamp('2021-05-26 11:10:41.837059+0000', tz='UTC'), Timestamp('2021-05-26 11:10:42.237056+0000', tz='UTC'), 'right')",
+                                    "(Timestamp('2021-05-26 11:10:42.237056+0000', tz='UTC'), Timestamp('2021-05-26 11:10:42.637063+0000', tz='UTC'), 'right')",
+                                    "(Timestamp('2021-05-26 11:10:42.637063+0000', tz='UTC'), Timestamp('2021-05-26 11:10:43.037060+0000', tz='UTC'), 'right')",
+                                    "(Timestamp('2021-05-26 11:10:43.037060+0000', tz='UTC'), Timestamp('2021-05-26 11:10:43.437058+0000', tz='UTC'), 'right')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            "2021-05-26T11:10:41",
+                                            "2021-05-26T11:10:41",
+                                            "both"
+                                        ],
+                                        [
+                                            "2021-05-26T11:10:41",
+                                            "2021-05-26T11:10:42",
+                                            "right"
+                                        ],
+                                        [
+                                            "2021-05-26T11:10:42",
+                                            "2021-05-26T11:10:42",
+                                            "right"
+                                        ],
+                                        [
+                                            "2021-05-26T11:10:42",
+                                            "2021-05-26T11:10:43",
+                                            "right"
+                                        ],
+                                        [
+                                            "2021-05-26T11:10:43",
+                                            "2021-05-26T11:10:43",
+                                            "right"
+                                        ]
+                                    ],
+                                    "dtype": "date"
+                                },
+                                "params": {
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": 18773.47,
+                                    "upper": 18773.47,
+                                    "day_first": false,
+                                    "year_first": false
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        40.0,
+                                        0.0,
+                                        40.0,
+                                        0.0,
+                                        20.0
+                                    ],
+                                    "sample_distribution": [
+                                        2,
+                                        0,
+                                        2,
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": "2021-05-26T11:10:41",
+                                    "highest": "2021-05-26T11:10:43",
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 5,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": "2021-05-26T11:16:48",
+                                    "std": 0.0
+                                }
+                            }
+                        },
+                        "not_sent": {
+                            "branch": {
+                                "label": "not_sent",
+                                "root": "not_sent",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "suppressed": {
+                            "branch": {
+                                "label": "suppressed",
+                                "root": "suppressed",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "hard_bounced": {
+                            "branch": {
+                                "label": "hard_bounced",
+                                "root": "hard_bounced",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "soft_bounced": {
+                            "branch": {
+                                "label": "soft_bounced",
+                                "root": "soft_bounced",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "delivered": {
+                            "branch": {
+                                "label": "delivered",
+                                "root": "delivered",
+                                "leaves": [
+                                    "(1.0, 1.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            1.0,
+                                            1.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 1.0,
+                                    "highest": 1.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "opened": {
+                            "branch": {
+                                "label": "opened",
+                                "root": "opened",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "clicked": {
+                            "branch": {
+                                "label": "clicked",
+                                "root": "clicked",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "spam_report": {
+                            "branch": {
+                                "label": "spam_report",
+                                "root": "spam_report",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "unsubscribed": {
+                            "branch": {
+                                "label": "unsubscribed",
+                                "root": "unsubscribed",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        },
+                        "contact_lost": {
+                            "branch": {
+                                "label": "contact_lost",
+                                "root": "contact_lost",
+                                "leaves": [
+                                    "(0.0, 0.0, 'both')"
+                                ]
+                            },
+                            "insight": {
+                                "intent": {
+                                    "intervals": [
+                                        [
+                                            0.0,
+                                            0.0,
+                                            "both"
+                                        ]
+                                    ],
+                                    "dtype": "number"
+                                },
+                                "params": {
+                                    "precision": 0,
+                                    "freq_precision": 2,
+                                    "granularity": 5,
+                                    "detail_stats": false,
+                                    "lower": null,
+                                    "upper": null
+                                },
+                                "patterns": {
+                                    "relative_freq": [
+                                        1
+                                    ],
+                                    "freq_mean": [
+                                        0
+                                    ],
+                                    "freq_std": [
+                                        0
+                                    ],
+                                    "sample_distribution": [
+                                        0
+                                    ]
+                                },
+                                "stats": {
+                                    "lowest": 0.0,
+                                    "highest": 0.0,
+                                    "nulls_percent": 0.0,
+                                    "sample_size": 0,
+                                    "excluded_sample": 0,
+                                    "excluded_percent": 0.0,
+                                    "mean": 0,
+                                    "std": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "config_meta": {
+        "uid": "ec08490e-0490-4a22-b766-ed41f711c27e",
+        "create": "2021-06-07 20:29:37.310336",
+        "modify": "2021-06-07 20:29:57.410696",
+        "release": "2.12.014"
+    }
+}
