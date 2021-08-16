@@ -6,7 +6,7 @@
             "status": "discovery",
             "connectors": {
                 "primary_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/data/feedback_dma_synthetic_hubspot_rwd_cfg_dataset${VERSION}.parquet",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/data/feedback_dma_synthetic_hubspot_rwd_cfg_dataset${VERSION}.parquet",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v02",
@@ -14,7 +14,7 @@
                     "aligned": true
                 },
                 "pm_synthetic_hubspot_rwd_cfg": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/contracts/hadron_pm_synthetic_hubspot_rwd_cfg.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/contracts/hadron_pm_synthetic_hubspot_rwd_cfg.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v02",
@@ -22,7 +22,7 @@
                     "aligned": false
                 },
                 "template_source": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasSourceHandler",
                     "raw_version": "v02",
@@ -30,7 +30,7 @@
                     "aligned": false
                 },
                 "template_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v02",
