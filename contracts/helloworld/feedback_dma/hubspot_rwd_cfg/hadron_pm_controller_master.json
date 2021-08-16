@@ -7,7 +7,7 @@
             "status": "discovery",
             "connectors": {
                 "pm_controller_master": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/contracts/hadron_pm_controller_master.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/contracts/hadron_pm_controller_master.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v02",
@@ -15,7 +15,7 @@
                     "aligned": false
                 },
                 "template_source": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasSourceHandler",
                     "raw_version": "v02",
@@ -23,7 +23,7 @@
                     "aligned": false
                 },
                 "template_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/hubspot_rwd_cfg/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/hubspot_rwd_cfg/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v02",
