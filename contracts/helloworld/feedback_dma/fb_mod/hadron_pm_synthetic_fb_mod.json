@@ -6,7 +6,7 @@
             "status": "discovery",
             "connectors": {
                 "primary_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -22,7 +22,7 @@
                     "aligned": false
                 },
                 "pm_synthetic_fb_mod": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_synthetic_fb_mod.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_synthetic_fb_mod.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -30,7 +30,7 @@
                     "aligned": false
                 },
                 "template_source": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasSourceHandler",
                     "raw_version": "v01",
@@ -38,7 +38,7 @@
                     "aligned": false
                 },
                 "template_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
