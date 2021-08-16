@@ -19,7 +19,7 @@
             "status": "discovery",
             "connectors": {
                 "primary_source": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/feedback_dma_synthetic_fb_mod_dataset${VERSION}.parquet",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -27,7 +27,7 @@
                     "aligned": true
                 },
                 "primary_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/feedback_dma_transition_fb_mod_dataset${VERSION}.parquet",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/feedback_dma_transition_fb_mod_dataset${VERSION}.parquet",
                     "raw_module_name": "ds_discovery.handlers.managed_content_handlers",
                     "raw_handler": "ManagedContentPersistHandler",
                     "raw_version": "v01",
@@ -35,7 +35,7 @@
                     "aligned": true
                 },
                 "field_description": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_field_description${VERSION}.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_field_description${VERSION}.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -43,7 +43,7 @@
                     "aligned": true
                 },
                 "dictionary": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_dictionary${VERSION}.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_dictionary${VERSION}.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -51,7 +51,7 @@
                     "aligned": true
                 },
                 "data_quality_summary": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_data_quality_summary${VERSION}${TO_DAYS}.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data/hadron_transition_fb_mod_data_quality_summary${VERSION}${TO_DAYS}.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -59,7 +59,7 @@
                     "aligned": true
                 },
                 "pm_transition_fb_mod": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_transition_fb_mod.json",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/contracts/hadron_pm_transition_fb_mod.json",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
@@ -67,7 +67,7 @@
                     "aligned": false
                 },
                 "template_source": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasSourceHandler",
                     "raw_version": "v01",
@@ -75,7 +75,7 @@
                     "aligned": false
                 },
                 "template_persist": {
-                    "raw_uri": "${PWD}/helloworld/feedback_dma/fb_mod/data",
+                    "raw_uri": "$PWD/helloworld/feedback_dma/fb_mod/data",
                     "raw_module_name": "ds_discovery.handlers.pandas_handlers",
                     "raw_handler": "PandasPersistHandler",
                     "raw_version": "v01",
