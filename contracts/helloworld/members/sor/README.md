@@ -3,7 +3,6 @@ To run the controller in a `Cortex` `Domain Contract Executor` skill pass the fo
 ```python
 {
     "hadron_kwargs":{
-            "HADRON_ROW_SIZE": 10000,
             "HADRON_FEEDBACK_PATH": "s3://project-hadron-cs-repo/10/2022-03-16 20:49:07.602028/members_feedback_v16.parquet",
             "HADRON_MEMBERS_PATH": "s3://project-hadron-cs-repo/10/2022-03-16 20:49:07.602028/members_v14.parquet",
             "HADRON_FLU_RISK_PATH": "s3://project-hadron-cs-repo/10/2022-03-16 20:49:07.602028/members_flu_risk_v14.parquet"
