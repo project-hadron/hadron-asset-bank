@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  domain-controller:
+    image: project_hadron/controller:0.2.1
+    environment:
+      # Hadron Domain config
+      HADRON_DEFAULT_PATH: s3://project-hadron-cs-repo/domain/
+      HADRON_PM_REPO: https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/hello_hadron/hello_ensemble
+      # Hadron additional environment variables
+
+      # AWS envs
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
