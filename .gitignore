@@ -73,7 +73,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/build/
+../discovery-transition-ds/docs/build/
 
 # PyBuilder
 target/
