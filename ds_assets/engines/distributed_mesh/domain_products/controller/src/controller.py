@@ -8,21 +8,10 @@ warnings.simplefilter(action='ignore', category=DeprecationWarning)
 __author__ = 'Darryl Oatridge'
 
 
-def domain_controller(params: dict):
-    # extract the payload
-    payload = params.get('payload', {})
-
-    # get the domain contract repo from the payload
-    uri_pm_repo = payload.get('domain_contract_repo')
-    if not isinstance(uri_pm_repo, str):
-        raise KeyError("The message parameters passed do not have the mandatory 'domain_contract_repo' payload key")
-
-    # extract any extra kwargs
-    hadron_kwargs = payload.get('hadron_kwargs', {})
-    # export and pop any environment variable from the kwargs
-    for key in hadron_kwargs.copy().keys():
-        if str(key).isupper():
-            os.environ[key] = hadron_kwargs.pop(key)
+def domain_controller(**kwargs):
+    uri_pm_repo = os.getenv('HADRON_PM_REPO')
+    # extract any kwargs
+    hadron_kwargs = kwargs.copy()
     # pop the run_controller attributes from the kwargs
     run_book = hadron_kwargs.pop('runbook', None)
     mod_tasks = hadron_kwargs.pop('mod_tasks', None)
