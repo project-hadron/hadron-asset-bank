@@ -1,58 +1,48 @@
-# Difference Report
-Taking two input datasets with identical shape and common unique identifier, produces a difference
-report of the two datasets. The report provides the rows and columns of interest, indexed by the 
-identifier, showing the distance of the 'origin' dataset values to the 'other' dataset values.
+# Difference Component Service
+Taking two input datasets, produces a set of data profiling for each, then given a unique identifier common 
+to both, compares the difference between each dataset where the identifiers match. The resulting output shows
+the rows and columns where value difference is found. 
 
+### General Environment Variables
+Create the environment variables
+* HADRON_DOMAIN_REPO_PATH - the location path of the Hadron Controller and its component capabilities
+* HADRON_DEFAULT_PATH - a default path where to put non-specified outputs.
+
+### Component Specific Environment Variables
 The following environment variables are specific to this Difference Report
-* HADRON_PROFILING_ORIGIN - The full URI of the 'origin' dataset.
-* HADRON_PROFILING_OTHER - The full URI of the 'other' dataset.
-* HADRON_ALIGN_ORIGIN - the full URI of the mapping file the 'origin' column names alignment
-* HADRON_ALIGN_OTHER - the full URI of the mapping file the 'origin' column names alignment
+* HADRON_DIFF_CLEANER_ORIGIN - The full URI of the 'origin' dataset.
+* HADRON_DIFF_CLEANER_OTHER - The full URI of the 'other' dataset.
+* HADRON_DIFF_HEADER_MAP_ORIGIN - the full URI of the mapping file the 'origin' column names alignment
+* HADRON_DIFF_HEADER_MAP_OTHER - the full URI of the mapping file the 'origin' column names alignment
 * HADRON_DIFF_ON - The unique identifier column name the two input data sources are joined by
 
-## Running the Ensemble
-To run the component ensemble we run the controller that orchestrates all the other components 
-in the ensemble.
+## Hadron docker-compose example
+ an example yaml file skeleton might look like
 
-### Hadron Controller
-Set environment variables.
+```yaml
+version: '3.8'
+services:
+  domain-controller:
+    image: gigas64/project_hadron:2.1
+    env_file: private_env_file
+    environment:
+      # mandatory domain ensemble path
+      - HADRON_DOMAIN_REPO_PATH=
+      # controller startup envs (optional)
+      - HADRON_CONTROLLER_REPORT=
+      # Connector contract paths (optional)
+      - HADRON_DEFAULT_PATH=
+      # specific component envs
+      - HADRON_DIFF_CLEANER_ORIGIN=
+      - HADRON_DIFF_CLEANER_OTHER=
+      - HADRON_DIFF_HEADER_MAP_ORIGIN=
+      - HADRON_DIFF_HEADER_MAP_OTHER=
+      - HADRON_DIFF_ON=
 ```
-os.environ["HADRON_DEFAULT_PATH"] = ""
-os.environ["HADRON_PROFILING_ORIGIN" = ""
-os.environ["HADRON_PROFILING_OTHER" = ""
-os.environ["HADRON_ALIGN_ORIGIN" = ""
-os.environ["HADRON_ALIGN_OTHER" = ""
-os.environ["HADRON_DIFF_ON" = ""
+where the `private_env_file` contains private environment variables such as connector secrets or tokens and
+the `gigas64/project_hadron:2.1` image is the generic docker image to run Project Hadron Component Services.
+
+Then to start run
+```bash
+$> docker-compose up
 ```
-Create an instance of the Controller where the `uri_pm_repo` parameter points to the 
-path of the ensemble Domain Contracts for the Difference Report.
-```
-from ds_discovery import Controller
-controller = Controller.from_env(uri_pm_repo="")
-controller.run_controller()
-```
-
-## Dictionary
-
-### Hadron Controller
-**uri_pm_repo** is a mandatory key and point to the Domain Contract path for this run.
-
-### Environment Variables
-* HADRON_DEFAULT_PATH - A single default path where all data will be sourced from and persisted too.
-* HADRON_PROFILING_ORIGIN - The full URI of the 'origin' dataset.
-* HADRON_PROFILING_OTHER - The full URI of the 'other' dataset.
-* HADRON_ALIGN_ORIGIN - the full URI of the mapping file the 'origin' column names alignment
-* HADRON_ALIGN_OTHER - the full URI of the mapping file the 'origin' column names alignment
-* HADRON_DIFF_ON - The unique identifier column name the two input data sources are joined by
-
-optional module and handler if the URI has no automatic assignment:
-* data profiling 'origin' source module and handler
-  * HADRON_WRANGLE_PROFILING_ORIGIN_SOURCE_MODULE
-  * HADRON_WRANGLE_PROFILING_ORIGIN_SOURCE_HANDLER
-* data profiling 'other' source module and handler
-  * HADRON_WRANGLE_PROFILING_OTHER_SOURCE_MODULE
-  * HADRON_WRANGLE_PROFILING_OTHER_SOURCE_HANDLER
-* Difference report persist module and handler
-  * HADRON_WRANGLE_DIFFERENCE_PERSIST_MODULE
-  * HADRON_WRANGLE_DIFFERENCE_PERSIST_HANDLER
-
