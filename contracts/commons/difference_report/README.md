@@ -38,6 +38,9 @@ services:
       - HADRON_DIFF_HEADER_MAP_ORIGIN=
       - HADRON_DIFF_HEADER_MAP_OTHER=
       - HADRON_DIFF_ON=
+    volumes:
+      - ./cache:/data/cache
+      - ~/.aws/credentials:/root/.aws/credentials:ro
 ```
 where the `private_env_file` contains private environment variables such as connector secrets or tokens and
 the `gigas64/project_hadron:2.1` image is the generic docker image to run Project Hadron Component Services.
