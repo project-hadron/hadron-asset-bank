@@ -23,7 +23,7 @@ The following environment variables are specific to this Difference Report
 version: '3.8'
 services:
   domain-controller:
-    image: gigas64/project_hadron:2.1
+    image: gigas64/project_hadron:3.4
     env_file: private_env_file
     environment:
       # mandatory domain ensemble path
