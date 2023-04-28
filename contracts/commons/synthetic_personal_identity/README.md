@@ -1,6 +1,6 @@
 # Synthetic Data Types Component Service
-Synthetically generates a dataset of different data types and patterns to test the robustness of ingesting 
-systems or solutions. The dataset has 27 columns.
+Synthetically generates a dataset of Personal Identity Information (PII) with patterns to test the robustness
+of ingesting systems or solutions. The dataset has 13 columns.
 
 ### General Environment Variables
 Create the environment variables
@@ -22,7 +22,7 @@ services:
     env_file: credential_file
     environment:
       # mandatory domain ensemble path
-      - HADRON_DOMAIN_REPO_PATH=https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/commons/synthetic_data_types
+      - HADRON_DOMAIN_REPO_PATH=https://raw.githubusercontent.com/project-hadron/hadron-asset-bank/master/contracts/commons/synthetic_personal_identity
       # specific component envs
       - HADRON_SYNTHETIC_DATA_SIZE=1000
       - HADRON_SYNTHETIC_OUTCOME_URI=/data/cache/data/hadron_synthetic_data_types.parquet

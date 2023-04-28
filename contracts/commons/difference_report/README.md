@@ -45,7 +45,15 @@ services:
 where the `private_env_file` contains private environment variables such as connector secrets or tokens and
 the `gigas64/project_hadron:2.1` image is the generic docker image to run Project Hadron Component Services.
 
-Then to start run
+If you are not using thr `credential_file` then remove the `env_file:` entry
+
+Then to start the docker container, from the location of your `docker-compose.yml` file, run
 ```bash
-$> docker-compose up
+$> docker-compose up -d
+```
+
+To stop the docker container, run
+```bash
+$> docker-compose down
+$> docker-compose stop
 ```
