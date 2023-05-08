@@ -9,12 +9,15 @@ Create the environment variables
 * HADRON_DEFAULT_PATH - a default path where to put non-specified outputs.
 
 ### Component Specific Environment Variables
-The following environment variables are specific to this Difference Report
-* HADRON_DIFF_CLEANER_ORIGIN - The full URI of the 'origin' dataset.
-* HADRON_DIFF_CLEANER_OTHER - The full URI of the 'other' dataset.
-* HADRON_DIFF_HEADER_MAP_ORIGIN - the full URI of the mapping file the 'origin' column names alignment
-* HADRON_DIFF_HEADER_MAP_OTHER - the full URI of the mapping file the 'origin' column names alignment
-* HADRON_DIFF_ON - The unique identifier column name the two input data sources are joined by
+The following environment variables are specific to the Difference Report
+* HADRON_CLEANER_ORIGIN_SOURCE_URI - The full URI of the 'origin' dataset.
+* HADRON_CLEANER_OTHER_SOURCE_URI - The full URI of the 'other' dataset.
+* HADRON_CLEANER_ORIGIN_HEADER_URI - the full URI of the mapping file the 'origin' column names alignment
+* HADRON_CLEANER_OTHER_HEADER_URI - the full URI of the mapping file the 'origin' column names alignment
+* HADRON_DIFFERENCE_ON_KEY - The unique identifier column name the two input data sources are joined by
+
+The following environment variables are specific to the Data Profiling Report
+* HADRON_PROFILING_SOURCE_URI - The full URI of the dataset to be data profiled.
 
 ## Hadron docker-compose example
  an example yaml file skeleton might look like
@@ -33,11 +36,11 @@ services:
       # Connector contract paths (optional)
       - HADRON_DEFAULT_PATH=
       # specific component envs
-      - HADRON_DIFF_CLEANER_ORIGIN=
-      - HADRON_DIFF_CLEANER_OTHER=
-      - HADRON_DIFF_HEADER_MAP_ORIGIN=
-      - HADRON_DIFF_HEADER_MAP_OTHER=
-      - HADRON_DIFF_ON=
+      - HADRON_CLEANER_ORIGIN_SOURCE_URI=
+      - HADRON_CLEANER_OTHER_SOURCE_URI=
+      - HADRON_CLEANER_ORIGIN_HEADER_URI=
+      - HADRON_CLEANER_OTHER_HEADER_URI=
+      - HADRON_DIFFERENCE_ON_KEY=
     volumes:
       - ./cache:/data/cache
       - ~/.aws/credentials:/root/.aws/credentials:ro
