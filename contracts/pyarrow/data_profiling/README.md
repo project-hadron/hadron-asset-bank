@@ -20,7 +20,7 @@ The following environment variables are specific to the Data Profiling Report
 version: '3.8'
 services:
   domain-controller:
-    image: gigas64/project_hadron_arrow:0.1
+    image: gigas64/hadron_pyarrow:1.0
     env_file: private_env_file
     environment:
       # mandatory domain ensemble path
